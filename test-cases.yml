@@ -1,0 +1,95 @@
+---
+- summary: |
+
+  requirement: |
+
+  prerequisites: |
+
+  test-data: |
+
+  steps: 
+
+  expected-result: |
+
+
+- summary: |
+    Проверка регистрации через электронную почту
+  requirement: |
+    Пользователь может зарегистрироваться с помощью электронной почты
+  prerequisites: |
+    empty
+  test-data: |
+    Nickname = test1111112 Email = test1111112@test.ru Password = password Password Confirmation = password
+  steps:
+    - Нажать на кнопку Sign up
+    - Ввести Nickname
+    - Ввести Email
+    - Ввести Password
+    - Ввести Password Confirmation
+    - Нажать Submit
+  expected-result: |
+    Пользователь должен попасть на главную страницу приложения
+
+
+- summary: |
+    Проверка авторизации через Github
+  requirement: |
+    Пользователь может авторизоваться с помощью Github
+  prerequisites: |
+    Созданный аккаунт Github
+  test-data: |
+    empty
+  steps: 
+    - Нажать на кнопку Sign up
+    - Нажать кнопку "Sign in with Github"
+  expected-result: |
+    Пользователь должен попасть на главную страницу приложения
+
+
+- summary: |
+    Проверка авторизации через Discord
+  requirement: |
+    Пользователь может авторизоваться через Discord
+  prerequisites: |
+    Созданный аккаунт Discord
+  test-data: |
+    empty
+  steps: 
+    - Нажать на кнопку Sign up
+    - Нажать кнопку "Sign in with Discord"
+  expected-result: |
+    Пользователь должен попасть на главную страницу приложения
+
+
+- summary: |
+    Проверка авторизации через электронную почту с корректными данными
+  requirement: |
+    Пользователь может авторизоваться через электронную почту
+  prerequisites: |
+    empty
+  test-data: |
+    Email = test1111112@test.ru Password = password
+  steps: 
+    - Нажать на кнопку "Sign in"
+    - Ввести Email
+    - Ввести Password
+    - Нажать "Submit"
+  expected-result: |
+    Пользователь должен попасть на главную страницу приложения
+
+
+- summary: |
+    Проверка невозможности авторизации при помощи незарегистрированной почты
+  requirement: |
+    Пользователь не может авторизоваться под ранее незарегистрированной почтой
+  prerequisites: |
+    empty
+  test-data: |
+    Email = sfdfsafwfsdf@ssdfdf.ru Password = password
+  steps: 
+    - Нажать на кнопку "Sign in"
+    - Ввести Email
+    - Ввести Password
+    - Нажать на Submit
+  expected-result: |
+    Авторизация не произошла, пользователь увидел информативное сообщение об ошибке
